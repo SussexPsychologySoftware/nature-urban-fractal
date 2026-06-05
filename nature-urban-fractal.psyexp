@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2025.1.1">
+<PsychoPy2experiment encoding="utf-8" version="2023.2.2">
   <Settings>
+    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
@@ -62,6 +63,7 @@
     <Param val="neon.local" valType="str" updates="None" name="plCompanionAddress"/>
     <Param val="8080" valType="num" updates="None" name="plCompanionPort"/>
     <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
+    <Param val="True" valType="bool" updates="None" name="plPupilCaptureRecordingEnabled"/>
     <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="plPupilRemoteAddress"/>
     <Param val="50020" valType="num" updates="None" name="plPupilRemotePort"/>
@@ -388,6 +390,23 @@
         <Param val="24" valType="str" updates="None" name="targetSize"/>
         <Param val="circle" valType="str" updates="constant" name="targetType"/>
       </CameraSetup>
+      <CodeComponent name="timer_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="import time, pylink&amp;#10;&amp;#10;def saveTime(label=&quot;&quot;):&amp;#10;    wall_clock_time = time.time()&amp;#10;    psychopy_time = globalClock.getTime() # same clock as _ONSET_TIME&amp;#10;    # Save to psychopy CSV&amp;#10;    thisExp.addData('sync_wall_%s' % label, wall_clock_time)&amp;#10;    thisExp.addData('sync_psychopy_%s' % label, psychopy_time)&amp;#10;    # Save to Eyelink file&amp;#10;    try:&amp;#10;        el_tracker = pylink.getEYELINK()&amp;#10;        if el_tracker is not None:&amp;#10;            el_tracker.sendMessage('SYNC %s WALL %.6f PSYCHOPY %.6f' % (label, wall_clock_time, psychopy_time))&amp;#10;    except Exception as e:&amp;#10;        logging.warning('EDF sync message failed (%s): %s' % (label, e))&amp;#10;        print('EDF sync message failed (%s): %s' % (label, e))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="saveTime('end_experiment')" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="timer_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="intro">
       <RoutineSettingsComponent name="intro" plugin="None">
@@ -912,14 +931,14 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="sync_code;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="retry = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="time_recorded = False&amp;#10;retry = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
-        <Param val="if t &gt;= 3.1:  # only after the flash has finished&amp;#10;    keys = sync_resp.getKeys(keyList=['r', 'space'], waitRelease=False)&amp;#10;    for k in keys:&amp;#10;        if k.name == 'r':&amp;#10;            retry = True&amp;#10;            continueRoutine = False&amp;#10;        elif k.name == 'space':&amp;#10;            continueRoutine = False" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="keys = sync_resp.getKeys(keyList=['r', 'space'], waitRelease=False)&amp;#10;for k in keys:&amp;#10;    if k.name == 'r':&amp;#10;        retry = True&amp;#10;        continueRoutine = False&amp;#10;    elif k.name == 'space':&amp;#10;        continueRoutine = Fals" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if tap_flash.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'clap')&amp;#10;    time_recorded = True&amp;#10;&amp;#10;if tap_flash.status == FINISHED: &amp;#10;    keys = sync_resp.getKeys(keyList=['r', 'space'], waitRelease=False)&amp;#10;    for k in keys:&amp;#10;        if k.name == 'r':&amp;#10;            retry = True&amp;#10;            continueRoutine = False&amp;#10;        elif k.name == 'space':&amp;#10;            continueRoutine = False" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="keys = sync_resp.getKeys(keyList=['r', 'space'], waitRelease=False)&amp;#10;for k in keys:&amp;#10;    if k.name == 'r':&amp;#10;        retry = True&amp;#10;        continueRoutine = False&amp;#10;    elif k.name == 'space':&amp;#10;        continueRoutine = Falss" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if not retry:&amp;#10;    if tap_flash.tStartRefresh is not None:&amp;#10;        exp_start_abs = core.getAbsTime() - globalClock.getTime()&amp;#10;        thisExp.addData('flash_onset_abs', exp_start_abs + tap_flash.tStartRefresh)&amp;#10;        sync_loop.finished = True&amp;#10;    else:&amp;#10;        # Flash didn't draw — treat as a retry rather than crash&amp;#10;        retry = True" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="if not retry:&amp;#10;    flash_t = thisExp.getLatestEntry().get('flash_onset_abs')&amp;#10;    if flash_t is not None:&amp;#10;        sync_loop.finished = True&amp;#10;    else:&amp;#10;        # somehow flash didn't log — retry instead of crashing&amp;#10;        retry = True&amp;#10;        pass" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="sync_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -947,6 +966,7 @@
   </Routines>
   <Flow>
     <Routine name="intro"/>
+    <Routine name="eyelink_setup"/>
     <LoopInitiator loopType="TrialHandler" name="sync_loop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
@@ -960,7 +980,6 @@
     </LoopInitiator>
     <Routine name="clapperboard"/>
     <LoopTerminator name="sync_loop"/>
-    <Routine name="eyelink_setup"/>
     <Routine name="fixation"/>
     <Routine name="eyelink_start"/>
     <Routine name="control_video"/>
@@ -997,6 +1016,19 @@
     <Routine name="eyelink_stop"/>
     <LoopTerminator name="image_loop"/>
     <LoopTerminator name="conditions_loop"/>
+    <LoopInitiator loopType="TrialHandler" name="sync_loop_end">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="999" valType="num"/>
+      <Param name="name" updates="None" val="sync_loop_end" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="clapperboard"/>
+    <LoopTerminator name="sync_loop_end"/>
     <Routine name="end_experiment"/>
   </Flow>
 </PsychoPy2experiment>
