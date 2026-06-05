@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2023.2.2">
+<PsychoPy2experiment encoding="utf-8" version="2026.1.3">
   <Settings>
-    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
@@ -63,7 +62,6 @@
     <Param val="neon.local" valType="str" updates="None" name="plCompanionAddress"/>
     <Param val="8080" valType="num" updates="None" name="plCompanionPort"/>
     <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
-    <Param val="True" valType="bool" updates="None" name="plPupilCaptureRecordingEnabled"/>
     <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="plPupilRemoteAddress"/>
     <Param val="50020" valType="num" updates="None" name="plPupilRemotePort"/>
@@ -149,6 +147,23 @@
         <Param val="" valType="str" updates="None" name="trialConditionVariablesForEyeLinkLogging"/>
         <Param val="True" valType="bool" updates="None" name="useQuitKeys"/>
       </MarkEvents>
+      <CodeComponent name="code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="time_recorded" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="time_recorded = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="if control_video_component.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'control_video_psychopy')&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="parent_video">
       <RoutineSettingsComponent name="parent_video" plugin="None">
@@ -219,6 +234,23 @@
         <Param val="condition" valType="str" updates="None" name="trialConditionVariablesForEyeLinkLogging"/>
         <Param val="True" valType="bool" updates="None" name="useQuitKeys"/>
       </MarkEvents>
+      <CodeComponent name="code_2" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="time_recorded = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="if parent_video_component.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'control_video_psychopy')&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if tap_flash.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'control_video_psychopy')&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_2" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="slideshow">
       <RoutineSettingsComponent name="slideshow" plugin="None">
@@ -291,6 +323,23 @@
         <Param val="condition, image_name" valType="str" updates="None" name="trialConditionVariablesForEyeLinkLogging"/>
         <Param val="True" valType="bool" updates="None" name="useQuitKeys"/>
       </MarkEvents>
+      <CodeComponent name="code_3" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="time_recorded" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="time_recorded = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="if image.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'image') #'image_%s_%i' %(condition, image_loop.thisN)&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_3" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="fixation">
       <RoutineSettingsComponent name="fixation" plugin="None">
@@ -393,10 +442,10 @@
       <CodeComponent name="timer_code" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="import time, pylink&amp;#10;&amp;#10;def saveTime(label=&quot;&quot;):&amp;#10;    wall_clock_time = time.time()&amp;#10;    psychopy_time = globalClock.getTime() # same clock as _ONSET_TIME&amp;#10;    # Save to psychopy CSV&amp;#10;    thisExp.addData('sync_wall_%s' % label, wall_clock_time)&amp;#10;    thisExp.addData('sync_psychopy_%s' % label, psychopy_time)&amp;#10;    # Save to Eyelink file&amp;#10;    try:&amp;#10;        el_tracker = pylink.getEYELINK()&amp;#10;        if el_tracker is not None:&amp;#10;            el_tracker.sendMessage('SYNC %s WALL %.6f PSYCHOPY %.6f' % (label, wall_clock_time, psychopy_time))&amp;#10;    except Exception as e:&amp;#10;        logging.warning('EDF sync message failed (%s): %s' % (label, e))&amp;#10;        print('EDF sync message failed (%s): %s' % (label, e))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="import time&amp;#10;&amp;#10;def saveTime(label=&quot;&quot;):&amp;#10;    wall_clock_time = time.time()&amp;#10;    # globalClock is the format string ('float') until run() builds the real Clock,&amp;#10;    # so a too-early call would otherwise crash here.&amp;#10;    psychopy_time = globalClock.getTime()        # same clock as _ONSET_TIME&amp;#10;    thisExp.addData('sync_wall_%s' % label, wall_clock_time)&amp;#10;    thisExp.addData('sync_psychopy_%s' % label, psychopy_time)&amp;#10;&amp;#10;    try:&amp;#10;        el_tracker = pylink.getEYELINK()&amp;#10;        el_tracker.sendMessage('SYNC %s WALL %.6f PSYCHOPY %.6f' % (label, wall_clock_time, psychopy_time))&amp;#10;    except Exception as e:&amp;#10;        logging.warning('EDF sync message failed (%s): %s' % (label, e))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="saveTime('session_start')" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -455,7 +504,6 @@
       <KeyboardComponent name="key_resp" plugin="None">
         <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="" valType="str" updates="constant" name="correctAns"/>
-        <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
@@ -904,17 +952,14 @@
         <Param val="" valType="list" updates="constant" name="vertices"/>
       </PolygonComponent>
       <SoundComponent name="tap_beep" plugin="None">
-        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="" valType="device" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="True" valType="bool" updates="constant" name="hamming"/>
-        <Param val="1" valType="code" updates="None" name="latencyClass"/>
         <Param val="tap_beep" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="str" updates="None" name="resample"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="440" valType="str" updates="set every repeat" name="sound"/>
-        <Param val="-1" valType="str" updates="None" name="speakerIndex"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="3.0" valType="code" updates="None" name="startVal"/>
@@ -945,7 +990,6 @@
       <KeyboardComponent name="sync_resp" plugin="None">
         <Param val="'r','space'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="" valType="str" updates="constant" name="correctAns"/>
-        <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
