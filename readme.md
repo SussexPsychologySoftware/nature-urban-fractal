@@ -11,3 +11,8 @@ ls /Users/mel29/Code/nature-urban-fractal/stimuli/images/nature_fractal/*.JPG | 
 ls /Users/mel29/Code/nature-urban-fractal/stimuli/images/urban/*.JPG | xargs -I{} basename {} .JPG | awk 'BEGIN{print "image_name"} {print}' > urban.csv
 ls /Users/mel29/Code/nature-urban-fractal/stimuli/images/urban_fractal/*.JPG | xargs -I{} basename {} .JPG | awk 'BEGIN{print "image_name"} {print}' > urban_fractal.csv
 ```
+
+Generating placeholder video:
+```
+ffmpeg -f lavfi -i color=c=black:s=320x240:r=1 -t 3 -c:v libx264 -crf 28 stimuli/videos/parent.mp4
+```
