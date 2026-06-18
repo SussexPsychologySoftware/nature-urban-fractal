@@ -240,7 +240,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="time_recorded = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="from PIL import Image&amp;#10;stim_dir = &quot;stimuli/images/&quot; + condition&amp;#10;preloaded = {}&amp;#10;for f in os.listdir(stim_dir):&amp;#10;    if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp')):&amp;#10;        preloaded[f] = Image.open(os.path.join(stim_dir, f)).convert('RGB')  # decode now&amp;#10;win.clearBuffer()                          # discard the warm-up draws (nothing shown)&amp;#10;&amp;#10;time_recorded = False&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="if parent_video_component.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'control_video_psychopy')&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="if tap_flash.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'control_video_psychopy')&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -279,7 +279,7 @@
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
         <Param val="False" valType="bool" updates="constant" name="flipVert"/>
-        <Param val="$&quot;stimuli/images/&quot; + condition + &quot;/&quot; + image_name + &quot;.jpg&quot;" valType="file" updates="set every repeat" name="image"/>
+        <Param val="$preloaded[image_name+&quot;.JPG&quot;]" valType="file" updates="set every repeat" name="image"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="" valType="str" updates="constant" name="mask"/>
         <Param val="image" valType="code" updates="None" name="name"/>
