@@ -290,7 +290,7 @@
         <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val=".2" valType="code" updates="None" name="startVal"/>
+        <Param val="0.2" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="2" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
@@ -681,11 +681,11 @@
       <HostDrawing name="HostDrawing_3" plugin="psychopy-eyelink">
         <Param val="" valType="str" updates="None" name="additionalDrawCommands"/>
         <Param val="image" valType="str" updates="None" name="componentsForDrawingToHostBackdrop"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="$&quot;stimuli/images/&quot; + condition + &quot;/&quot; + image_name + &quot;.jpg&quot;, image" valType="str" updates="None" name="imagesToHostBackdrop"/>
         <Param val="HostDrawing_3" valType="code" updates="None" name="name"/>
-        <Param val="&quot;Trial %s&quot; % image_loop.thisN" valType="str" updates="None" name="recordStatusMessage"/>
+        <Param val="" valType="str" updates="None" name="recordStatusMessage"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
