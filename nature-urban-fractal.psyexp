@@ -896,7 +896,7 @@
     <Routine name="parent_video"/>
     <Routine name="eyelink_stop"/>
     <LoopInitiator loopType="TrialHandler" name="image_loop">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="Selected rows" updates="None" val="$list(np.random.choice(31, 11, replace=False)) " valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
       <Param name="conditionsFile" updates="None" val="$&quot;stimuli/&quot; + condition + &quot;.csv&quot;" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
