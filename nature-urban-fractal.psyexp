@@ -329,9 +329,9 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="time_recorded" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="time_recorded = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="start_time_recorded = False&amp;#10;end_time_recorded = False&amp;#10;print(image_name)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Py" valType="str" updates="None" name="Code Type"/>
-        <Param val="if image.status == STARTED and not time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'image') #'image_%s_%i' %(condition, image_loop.thisN)&amp;#10;    time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if image.status == STARTED and not start_time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'image_start') #'image_%s_%i' %(condition, image_loop.thisN)&amp;#10;    start_time_recorded = True&amp;#10;&amp;#10;if image.status == FINISHED and not end_time_recorded:&amp;#10;    win.callOnFlip(saveTime, 'image_end') #'image_%s_%i' %(condition, image_loop.thisN)&amp;#10;    end_time_recorded = True" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
