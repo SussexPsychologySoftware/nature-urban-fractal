@@ -16,3 +16,8 @@ Generating placeholder video:
 ```
 ffmpeg -f lavfi -i color=c=black:s=320x240:r=1 -t 3 -c:v libx264 -crf 28 stimuli/videos/parent.mp4
 ```
+
+Converting fixation cross to .mov
+```
+ffmpeg -i stimuli/videos/Spiral.avi -c:v libx264 -g 15 -pix_fmt yuv420p -c:a pcm_s16le stimuli/videos/fixation.mov
+```
