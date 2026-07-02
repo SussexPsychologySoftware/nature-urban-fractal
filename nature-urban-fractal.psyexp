@@ -391,7 +391,7 @@
         <Param val="0.001" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="stimuli/videos/fixation.mov" valType="str" updates="None" name="targetFilename"/>
-        <Param val="48" valType="str" updates="None" name="targetSize"/>
+        <Param val="250" valType="str" updates="None" name="targetSize"/>
         <Param val="movie" valType="str" updates="constant" name="targetType"/>
       </CameraSetup>
       <CodeComponent name="timer_code" plugin="None">
