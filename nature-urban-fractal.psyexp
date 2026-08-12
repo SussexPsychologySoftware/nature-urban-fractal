@@ -361,7 +361,7 @@
       <InitializeConnection name="Initialize" plugin="psychopy-eyelink">
         <Param val="False" valType="bool" updates="None" name="disableEyeLinkAudio"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="True" valType="bool" updates="None" name="dummyMode"/>
+        <Param val="False" valType="bool" updates="None" name="dummyMode"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="100.1.1.1" valType="str" updates="None" name="hostAddress"/>
         <Param val="Initialize" valType="code" updates="None" name="name"/>
@@ -1664,7 +1664,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.2" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
@@ -1744,7 +1744,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.2" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
@@ -1824,7 +1824,7 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val=".2" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="1" valType="code" updates="constant" name="stopVal"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
